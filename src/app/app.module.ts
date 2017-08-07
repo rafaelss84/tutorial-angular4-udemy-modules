@@ -11,14 +11,13 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
-import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AppRoutingModule } from "app/app-routing.module";
-import { AuthService } from "app/auth.service";
-import { AuthGuard } from "app/auth-guard.service";
-import { CanDeactivateGuard } from "app/servers/edit-server/can-deactivate-guard.service";
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { ServerResolver } from "app/servers/server/server-resolver.service";
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,7 @@ import { ServerResolver } from "app/servers/server/server-resolver.service";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService, 
-    AuthService, 
-    AuthGuard, 
-    CanDeactivateGuard,
-    ServerResolver],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

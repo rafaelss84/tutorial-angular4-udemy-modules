@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
-import { Subscription } from "rxjs/Subscription";
+import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-user',
@@ -17,7 +17,7 @@ export class UserComponent implements OnInit, OnDestroy {
     this.user = {
       id: this.route.snapshot.params['id'],
       name: this.route.snapshot.params['name']
-    }
+    };
     this.paramsSubscription = this.route.params
       .subscribe(
         (params: Params) => {
@@ -28,7 +28,6 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // Não precisa ser feito porque o Angular faz isso
     this.paramsSubscription.unsubscribe();
   }
 
